@@ -1,0 +1,8 @@
+version: '2'
+
+services:
+  python:
+    build: .
+    volumes:
+      - ./python/:/code
+    entrypoint: watchmedo auto-restart --recursive --pattern="*.py" --directory="." python mypackage/run.py
